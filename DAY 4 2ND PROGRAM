@@ -1,0 +1,25 @@
+def calculate_users(total_users, staff_users):
+    student_users = total_users - staff_users
+    non_teaching_staff_users = staff_users // 3
+    
+    return student_users, non_teaching_staff_users
+
+def main():
+    try:
+        total_users = int(input("Total Users: "))
+        staff_users = int(input("Staff Users: "))
+
+        if total_users < 0 or staff_users < 0:
+            print("Invalid input. Users cannot be negative.")
+            return
+
+        student_users, non_teaching_staff_users = calculate_users(total_users, staff_users)
+        print("Student Users:", student_users)
+        print("Non-teaching Staff Users:", non_teaching_staff_users)
+
+    except ValueError:
+        print("Invalid input. Please enter valid integer values.")
+
+if __name__ == "__main__":
+    main()
+
