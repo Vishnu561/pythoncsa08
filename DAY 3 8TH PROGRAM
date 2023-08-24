@@ -1,0 +1,23 @@
+def group_anagrams(strs):
+    anagram_map = {}
+    
+    for word in strs:
+        sorted_word = ''.join(sorted(word))
+        if sorted_word in anagram_map:
+            anagram_map[sorted_word].append(word)
+        else:
+            anagram_map[sorted_word] = [word]
+    
+    return list(anagram_map.values())
+
+# Test cases
+test_cases = [
+    ["eat", "tea", "tan", "ate", "nat", "bat"],
+    [""],
+    ["a"],
+    ["banana"],
+    ["12345"]
+]
+
+for strs in test_cases:
+    print("Output:", group_anagrams(strs))
