@@ -1,0 +1,16 @@
+from itertools import permutations
+
+def generate_combinations(digits):
+    digit_list = list(digits)
+    combinations = permutations(digit_list)
+    
+    for combo in combinations:
+        print(''.join(combo))
+
+# Test cases
+test_cases = ["123", "789", "1456", "-856", "1001", "555"]
+
+for digits in test_cases:
+    print("Sample Output:")
+    generate_combinations(digits)
+    print()
