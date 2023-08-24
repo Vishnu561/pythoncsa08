@@ -1,0 +1,21 @@
+def get_season(month, day):
+    if (month == "January" and day >= 20) or (month == "February"):
+        return "Winter"
+    elif (month == "February" and day < 20) or (month == "March" or month == "April"):
+        return "Spring"
+    elif (month == "April" and day < 21) or (month == "May" or month == "June"):
+        return "Summer"
+    elif (month == "June" and day < 21) or (month == "July" or month == "August"):
+        return "Fall"
+    else:
+        return "Winter"
+
+# Input
+
+month = input("Enter the month: ").capitalize()
+day = int(input("Enter the date: "))
+
+# Determine and output the season
+season = get_season(month, day)
+print("The season is currently", season)
+
